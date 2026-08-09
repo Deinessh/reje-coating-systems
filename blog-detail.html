@@ -301,7 +301,12 @@
             const urlParams = new URLSearchParams(window.location.search);
             const postId = urlParams.get('id');
 
-            const apiUrls = ['http://localhost:8000/api/posts', 'http://localhost:8001/api/posts'];
+            // Production API with local fallback
+            const apiUrls = [
+                'https://admin.reje.in/api/posts',
+                'http://localhost:8000/api/posts',
+                'http://localhost:8001/api/posts'
+            ];
 
             function loadPostData(urlIndex = 0) {
                 if (urlIndex >= apiUrls.length) {
