@@ -1189,7 +1189,7 @@ header.sticky {
 }
 .expertise-grid {
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 15px;
     margin-bottom: 40px;
 }
@@ -1201,6 +1201,10 @@ header.sticky {
     box-shadow: 0 10px 20px rgba(0,0,0,0.03);
     transition: var(--transition);
     border: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .expertise-card:hover {
     transform: translateY(-5px);
@@ -1210,7 +1214,9 @@ header.sticky {
     font-size: 35px;
     color: #0b1120;
     margin-bottom: 15px;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .expertise-card span {
     font-size: 11px;
@@ -1514,4 +1520,38 @@ header.sticky {
 
 .carousel-btn.next {
     right: 0;
+}
+
+
+/* Hero Video Update */
+#heroVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+.hero-overlay {
+    z-index: 1 !important;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Expertise Icon Alignment */
+.expertise-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px 10px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    transition: var(--transition);
+    border: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
