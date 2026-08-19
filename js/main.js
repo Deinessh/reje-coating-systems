@@ -182,3 +182,55 @@ document.addEventListener('DOMContentLoaded', () => {
         revealOnScroll.observe(el);
     });
 });
+
+// Services Carousel Auto Scroll and Controls
+document.addEventListener('DOMContentLoaded', () => {
+    const servSlider = document.getElementById('servSlider');
+    const servPrev = document.getElementById('servPrev');
+    const servNext = document.getElementById('servNext');
+    
+    if (servSlider && servPrev && servNext) {
+        const scrollAmount = 300; 
+        let autoScrollInterval;
+        
+        function scrollRight() {
+            if (servSlider.scrollLeft + servSlider.clientWidth >= servSlider.scrollWidth - 10) {
+                servSlider.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                servSlider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+        
+        function scrollLeft() {
+            if (servSlider.scrollLeft <= 0) {
+                servSlider.scrollTo({ left: servSlider.scrollWidth, behavior: 'smooth' });
+            } else {
+                servSlider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            }
+        }
+        
+        servNext.addEventListener('click', () => {
+            scrollRight();
+            resetAutoScroll();
+        });
+        
+        servPrev.addEventListener('click', () => {
+            scrollLeft();
+            resetAutoScroll();
+        });
+        
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(scrollRight, 3000);
+        }
+        
+        function resetAutoScroll() {
+            clearInterval(autoScrollInterval);
+            startAutoScroll();
+        }
+        
+        servSlider.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+        servSlider.addEventListener('mouseleave', startAutoScroll);
+        
+        startAutoScroll();
+    }
+});

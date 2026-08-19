@@ -36,10 +36,15 @@
                 <div class="nav-dropdown">
                     <a href="services.html" class="nav-dropdown-trigger">SERVICES <i class="fas fa-chevron-down"
                             style="font-size: 10px;"></i></a>
-                    <div class="nav-dropdown-content">
+                                        <div class="nav-dropdown-content">
+                        <a href="services.html#dredging">Dredging</a>
+                        <a href="services.html#sheet-piling">Sheet Piling</a>
                         <a href="services.html#heavy-civil">Heavy Civil Infrastructure</a>
-                        <a href="services.html#marine">Marine & Dredging Solutions</a>
+                        <a href="services.html#diaphragm-wall">Diaphragm Wall</a>
+                        <a href="services.html#shore-protection">Shore Protection (Groyne)</a>
                         <a href="services.html#ibms">IBMS & Smart City</a>
+                        <a href="services.html#hvac">HVAC & Chilled Water System</a>
+                        <a href="services.html#mep">MEP Projects</a>
                         <a href="services.html#amc">AMC Services</a>
                     </div>
                 </div>
@@ -139,150 +144,109 @@
             </div>
             <div class="services-carousel-container">
                 <button class="carousel-btn prev" id="servPrev"><i class="fas fa-chevron-left"></i></button>
-                <div class="services-slider" id="servSlider">
-                    <!-- Slide 1 -->
-                    <div class="service-card tilt-card">
-                        <div class="service-img">
-                            <img alt="Heavy Civil Infrastructure"
-                                src="images/HEAVY CIVIL INFRASTRUCTURE/Bridges Roads & Infrastructure Development Works.png"
-                                style="height: 200px; object-fit: cover;" />
-                        </div>
-                        <div class="service-content">
-                            <h3>Heavy Civil Infrastructure</h3>
-                            <p>Connecting communities through cutting-edge infrastructure</p>
-                            <a href="services.html" class="service-link">Learn More <i
-                                    class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- Slide 2 -->
-                    <div class="service-card tilt-card">
-                        <div class="service-img">
-                            <img alt="Marine & Dredging Solutions" src="images/hero_marine.png"
-                                style="height: 200px; object-fit: cover;" />
-                        </div>
-                        <div class="service-content">
-                            <h3>Marine & Dredging</h3>
-                            <p>Building waterways, strengthening coastlines, enabling infrastructure</p>
-                            <a href="services.html" class="service-link">Learn More <i
-                                    class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- Slide 6 -->
-                    <div class="service-card tilt-card">
-                        <div class="service-img">
-                            <img alt="IBMS & Smart City" src="images/service_verticals_ibms.png"
-                                style="height: 200px; object-fit: cover;" />
-                        </div>
-                        <div class="service-content">
-                            <h3>IBMS & Smart City</h3>
-                            <p>Advanced tech for secure, automated, and efficient infrastructure</p>
-                            <a href="services.html" class="service-link">Learn More <i
-                                    class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- Slide 7 -->
-                    <div class="service-card tilt-card">
-                        <div class="service-img">
-                            <img alt="AMC Services" src="images/engineering_services.png"
-                                style="height: 200px; object-fit: cover;" />
-                        </div>
-                        <div class="service-content">
-                            <h3>AMC Services</h3>
-                            <p>Multi-brand maintenance capability for facility management</p>
-                            <a href="services.html#amc" class="service-link">Learn More <i
-                                    class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-btn next" id="servNext"><i class="fas fa-chevron-right"></i></button>
-            </div>
-
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    const slider = document.getElementById('servSlider');
-                    const prev = document.getElementById('servPrev');
-                    const next = document.getElementById('servNext');
-
-                    if (slider && prev && next) {
-                        const getScrollAmount = () => {
-                            const card = slider.querySelector('.service-card');
-                            return card ? card.offsetWidth + 20 : 280;
-                        };
-
-                        next.addEventListener('click', () => {
-                            slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-                        });
-
-                        prev.addEventListener('click', () => {
-                            slider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-                        });
-
-                        // Auto scroll function
-                        function scrollRight() {
-                            if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
-                                slider.scrollTo({ left: 0, behavior: 'smooth' });
-                            } else {
-                                slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-                            }
-                        }
-
-                        let autoScroll = setInterval(scrollRight, 3000);
-
-                        // Pause on hover
-                        slider.parentElement.addEventListener('mouseenter', () => clearInterval(autoScroll));
-                        slider.parentElement.addEventListener('mouseleave', () => {
-                            autoScroll = setInterval(scrollRight, 3000);
-                        });
-                    }
-                });
-            </script>
-        </div>
-    </section>
-
-    <!-- Business Overview Section -->
-    <section class="section">
-        <div class="container">
-            <div class="about-grid" style="align-items: center;">
-                <div class="about-img reveal-left">
-                    <img src="images/service_business_overview.png" alt="Business Overview"
-                        style="width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" />
-                </div>
-                <div class="about-text reveal-right">
-                    <h4>Overview</h4>
-                    <h2 style="font-size: 36px; margin-bottom: 20px;">BUSINESS <span>OVERVIEW</span></h2>
-
-                    <ul style="list-style-type: none; padding: 0;">
-                        <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-                            <i class="fas fa-check-circle"
-                                style="color: var(--primary-color); margin-top: 5px; margin-right: 12px; font-size: 18px;"></i>
-                            <span style="font-size: 16px; line-height: 1.6; color: var(--text-dark);">Reje Coating
-                                Systems has been associated with some of the most Iconic EPC Projects executed across
-                                sectors such as Ports, Harbours, Commercial Complexes, IT Parks, Hospitals, Hotels,
-                                Malls and Industries/Factories.</span>
-                        </li>
-                        <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-                            <i class="fas fa-check-circle"
-                                style="color: var(--primary-color); margin-top: 5px; margin-right: 12px; font-size: 18px;"></i>
-                            <span style="font-size: 16px; line-height: 1.6; color: var(--text-dark);">Reje Coating
-                                Systems PRIVATE LIMITED is India's leading EPC contracting company.</span>
-                        </li>
-                        <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-                            <i class="fas fa-check-circle"
-                                style="color: var(--primary-color); margin-top: 5px; margin-right: 12px; font-size: 18px;"></i>
-                            <span style="font-size: 16px; line-height: 1.6; color: var(--text-dark);">Strong Presence in
-                                all the Metro Cities.</span>
-                        </li>
-                        <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-                            <i class="fas fa-check-circle"
-                                style="color: var(--primary-color); margin-top: 5px; margin-right: 12px; font-size: 18px;"></i>
-                            <span style="font-size: 16px; line-height: 1.6; color: var(--text-dark);">Capable design and
-                                engineering team with latest software tools such as BIM &amp; MEP Revit and HAPP &amp;
-                                BIM.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+                                  <div class="services-slider" id="servSlider">
+                      <!-- Slide 1 -->
+                      <div class="service-card tilt-card">
+                          <div class="service-img">
+                              <img alt="Dredging" src="images/hero_marine.png" style="height: 200px; width: 100%; object-fit: cover;" />
+                          </div>
+                          <div class="service-content">
+                              <h3>Dredging</h3>
+                              <p>Building waterways and reclaiming land with precision.</p>
+                              <a href="services.html#dredging" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                          </div>
+                      </div>
+                      <!-- Slide 2 -->
+                      <div class="service-card tilt-card">
+                          <div class="service-img">
+                              <img alt="Sheet Piling" src="images/services/sheet_piling.jpg" style="height: 200px; width: 100%; object-fit: cover;" />
+                          </div>
+                          <div class="service-content">
+                              <h3>Sheet Piling</h3>
+                              <p>Robust earth retention for marine and land applications.</p>
+                              <a href="services.html#sheet-piling" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                          </div>
+                      </div>
+                      <!-- Slide 3 -->
+                      <div class="service-card tilt-card">
+                          <div class="service-img">
+                              <img alt="Heavy Civil Infrastructure" src="images/HEAVY CIVIL INFRASTRUCTURE/Bridges Roads & Infrastructure Development Works.png" style="height: 200px; width: 100%; object-fit: cover;" />
+                          </div>
+                          <div class="service-content">
+                              <h3>Heavy Civil Infrastructure</h3>
+                              <p>Connecting communities through cutting-edge infrastructure.</p>
+                              <a href="services.html#heavy-civil" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                          </div>
+                      </div>
+                      <!-- Slide 4 -->
+                      <div class="service-card tilt-card">
+                          <div class="service-img">
+                              <img alt="Diaphragm Wall" src="images/services/diaphragm_wall.jpg" style="height: 200px; width: 100%; object-fit: cover;" />
+                          </div>
+                          <div class="service-content">
+                              <h3>Diaphragm Wall</h3>
+                              <p>Highly secure retaining walls for deep underground structures.</p>
+                              <a href="services.html#diaphragm-wall" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                          </div>
+                      </div>
+                      <!-- Slide 5 -->
+                      <div class="service-card tilt-card">
+                          <div class="service-img">
+                              <img alt="Shore Protection" src="images/services/shore_protection.jpg" style="height: 200px; width: 100%; object-fit: cover;" />
+                          </div>
+                          <div class="service-content">
+                              <h3>Shore Protection</h3>
+                              <p>Resilient protective measures like groynes to stop coastal erosion.</p>
+                              <a href="services.html#shore-protection" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                          </div>
+                      </div>
+                      <!-- Slide 6 -->
+                      <div class="service-card tilt-card">
+                          <div class="service-img">
+                              <img alt="IBMS & Smart City" src="images/services/ibms_smart_city.jpg" style="height: 200px; width: 100%; object-fit: cover;" />
+                          </div>
+                          <div class="service-content">
+                              <h3>IBMS & Smart City</h3>
+                              <p>Intelligent building management for sustainable smart cities.</p>
+                              <a href="services.html#ibms" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                          </div>
+                      </div>
+                      <!-- Slide 7 -->
+                      <div class="service-card tilt-card">
+                          <div class="service-img">
+                              <img alt="HVAC" src="images/service_hvac.png" style="height: 200px; width: 100%; object-fit: cover;" />
+                          </div>
+                          <div class="service-content">
+                              <h3>HVAC & Chilled Water</h3>
+                              <p>Climate control systems for industrial and commercial use.</p>
+                              <a href="services.html#hvac" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                          </div>
+                      </div>
+                      <!-- Slide 8 -->
+                      <div class="service-card tilt-card">
+                          <div class="service-img">
+                              <img alt="MEP Projects" src="images/services/mep_projects.jpg" style="height: 200px; width: 100%; object-fit: cover;" />
+                          </div>
+                          <div class="service-content">
+                              <h3>MEP Projects</h3>
+                              <p>Turnkey mechanical, electrical, and plumbing engineering.</p>
+                              <a href="services.html#mep" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                          </div>
+                      </div>
+                      <!-- Slide 9 -->
+                      <div class="service-card tilt-card">
+                          <div class="service-img">
+                              <img alt="AMC Services" src="images/engineering_services.png" style="height: 200px; width: 100%; object-fit: cover;" />
+                          </div>
+                          <div class="service-content">
+                              <h3>AMC Services</h3>
+                              <p>Comprehensive maintenance contracts ensuring maximum uptime.</p>
+                              <a href="services.html#amc" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  <button class="carousel-btn next" id="servNext"><i class="fas fa-chevron-right"></i></button>
+              </div>
     </section>
 
     <!-- Expertise Section -->
@@ -477,15 +441,20 @@
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="footer-title">Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="services.html#heavy-civil">Heavy Civil Infrastructure</a></li>
-                        <li><a href="services.html#marine">Marine &amp; Dredging</a></li>
-                        <li><a href="services.html#ibms">IBMS &amp; Smart City</a></li>
-                        <li><a href="services.html#amc">AMC Services</a></li>
-                    </ul>
-                </div>
+                                  <div>
+                      <h3 class="footer-title">Services</h3>
+                      <ul class="footer-links">
+                          <li><a href="services.html#dredging">Dredging</a></li>
+                          <li><a href="services.html#sheet-piling">Sheet Piling</a></li>
+                          <li><a href="services.html#heavy-civil">Heavy Civil</a></li>
+                          <li><a href="services.html#diaphragm-wall">Diaphragm Wall</a></li>
+                          <li><a href="services.html#shore-protection">Shore Protection</a></li>
+                          <li><a href="services.html#ibms">IBMS &amp; Smart City</a></li>
+                          <li><a href="services.html#hvac">HVAC &amp; Chilled Water</a></li>
+                          <li><a href="services.html#mep">MEP Projects</a></li>
+                          <li><a href="services.html#amc">AMC Services</a></li>
+                      </ul>
+                  </div>
                 <div>
                     <h3 class="footer-title">Locations</h3>
                     <ul class="footer-links">
