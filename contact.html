@@ -101,21 +101,36 @@
             <!-- Contact Form -->
             <div class="contact-form">
                 <h3 style="margin-bottom: 25px; font-size: 24px;">Send us a Message</h3>
-                <form action="#" method="POST">
+                <form id="waForm">
                     <div class="form-group">
-                        <input class="form-control" placeholder="Your Name" required="" type="text" />
+                        <input id="waName" class="form-control" placeholder="Your Name" required="" type="text" />
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="Your Email" required="" type="email" />
+                        <input id="waEmail" class="form-control" placeholder="Your Email" required="" type="email" />
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="Subject" type="text" />
+                        <input id="waSubject" class="form-control" placeholder="Subject" type="text" />
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" placeholder="Message" required=""></textarea>
+                        <textarea id="waMessage" class="form-control" placeholder="Message" required=""></textarea>
                     </div>
-                    <button class="btn" type="submit">Send Message</button>
+                    <button class="btn" type="submit">SEND MESSAGE</button>
                 </form>
+
+                <script>
+                    document.getElementById('waForm').addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        var name = document.getElementById('waName').value;
+                        var email = document.getElementById('waEmail').value;
+                        var subject = document.getElementById('waSubject').value;
+                        var message = document.getElementById('waMessage').value;
+
+                        var text = "New Inquiry:\nName: " + name + "\nEmail: " + email + "\nSubject: " + subject + "\nMessage: " + message;
+                        var whatsappUrl = "https://wa.me/919629691554?text=" + encodeURIComponent(text);
+
+                        window.open(whatsappUrl, '_blank');
+                    });
+                </script>
             </div>
         </div>
     </section>
